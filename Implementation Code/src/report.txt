@@ -1,0 +1,89 @@
+
+- handling Online Events between Users (online)
+
+
+
+================================================ THEN SEE MISPOINTS IN PROJECT ================================
+
+1) Seller View
+
+-> in product view , init it with pending and accepting  Item product ONLY         DONE 100%
+    pending  ->  set btn with [disabled btn with pending text]
+    accept -> set btn with show part
+
+-> solve seller notification pane problem          DONE 100%
+
+-> init submitted items pane with all item of seller      DONE 100%
+
+-> init participated bidder pane        DONE 100%
+
+-> upload item image and also empty form after submit item   100%
+
+==============
+
+2) Bidder View
+
+-> edit style of view info                100%
+   start time and end time in view details add something       100%
+   closed btn in view details         100%
+
+-> Participate in view details Fire Exception     100%
+
+-> if this item in product pane is participated by user make btn disable    100%
+
+-> Search Pane      DONE 200%
+  1- fire exception when search with empty
+  2- filter by session and by Date not work
+  3- if i select cat and search with empty still fire exception
+  4- when i back with empty search no item appear again
+
+-> Menu bar Problem        100%
+
+*functionality
+
+-> edit info not handled  100%
+-> Currently in Bid    100%
+
+-> we should verify that price of item appear right   100%
+-> handle winner Work with notification [by setting winner_id only]    100%
+
+===============
+
+3) Admin View
+
+=> retrieve user count , itemsales , requests  100%
+=> add css classes to manages users    100%
+=> init tables data from db   [not need !]
+=> init db statictics [not need !]
+=> Active Events Work        100%
+
+===============
+=> handle item served or not   100%
+=> handle session time with date  100%
+=> Offline Notification     100%
+=> Online Notification  [STOPPED]
+=> each hour must product pane updated to see currently bid item  100%
+=> must check when read session  that its on the same day as it differ in days 100%
+=> Notify seller with his item that sold [Schedual notifier of seller must update it]   100%
+
+
+=>   BUILDING ADMIN CHOOSE SESSION THAT NOT CHOSEN BEFORE IN SAME DATE      100%
+=>   TOMORROW WE MUST MAKE AT SUBMIT PRODUCT TO SELECT DATE FIRST THEN SELECT ONE OF SESSION DAY THAT NOT RESERVED 100%
+=>   TOMORROW WE MUST MAKE BIDDER TO SEARCH WITH DATE FIRST THEN CHOOSE ONE OF THE SESSION DAY TIME  100%
+=>   CONTINUE FIXING ..
+
+=> in bidder show only product of current date or after        100%
+=> am / pm    100%
+=> must show date of current day also in drop menus not after only [also where affect products ..]   100%
+=> after submitting new product sessions must reinit to submit again   100%
+
+==>  SESSION LIST FOUND SESSION TIME HAS BEEN RESERVED  100%
+
+=> validate that participated bidder submit price [validate at result time]     ------
+
+
+=> Offline notification must stored in db and init to user if accept of notify = 0     --------
+=> Online Communication [Notification + Chat]       ------
+
+=> Search by date ??      100%
+=> sign out update state if close from x not sign out only    100%
