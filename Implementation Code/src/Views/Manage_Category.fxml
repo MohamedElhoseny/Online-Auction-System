@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="_category" nodeOrientation="LEFT_TO_RIGHT" prefHeight="542.0" prefWidth="617.0" style="-fx-background-color: rgba(245, 249, 254, 1);" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane fx:id="categoryview" nodeOrientation="LEFT_TO_RIGHT" prefHeight="542.0" prefWidth="617.0" style="-fx-background-color: rgba(245, 249, 254, 1);">
+         <children>
+            <TableView fx:id="Category_Table" focusTraversable="false" layoutX="16.0" layoutY="130.0" prefHeight="333.0" styleClass="tree-table-view" translateX="40.0" AnchorPane.leftAnchor="16.0">
+               <columns>
+                  <TableColumn fx:id="ID_Column" editable="false" prefWidth="130.0" styleClass="rowLabel" text="#ID" />
+                  <TableColumn fx:id="Category_Column" prefWidth="214.0" styleClass="rowLabel" text="Category Name" />
+                  <TableColumn fx:id="Admin_Column" prefWidth="138.0" styleClass="rowLabel" text="ADMIN" />
+               </columns>
+            </TableView>
+            <JFXButton fx:id="Save" layoutX="355.0" layoutY="475.0" prefHeight="46.0" prefWidth="139.0" ripplerFill="#e4dcdc" style="-fx-background-color: gray;" text="  Save" textFill="WHITE" AnchorPane.leftAnchor="355.0" AnchorPane.rightAnchor="123.0">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="CHECK" size="18" />
+               </graphic></JFXButton>
+            <JFXButton fx:id="ADD" alignment="CENTER_RIGHT" layoutX="34.0" layoutY="62.0" prefHeight="46.0" prefWidth="212.0" style="-fx-background-color: #BA68C8;" text="Add New Category" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="19.0" />
+               </font>
+               <padding>
+                  <Insets right="18.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="19.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Resources/Images/add.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXTextField layoutX="330.0" layoutY="77.0" minWidth="262.0" prefHeight="31.0" prefWidth="262.0" promptText="Search For Category" style="-fx-background-color: rgba(245, 249, 254, 1);" AnchorPane.rightAnchor="25.0" />
+            <JFXButton fx:id="deletebtn" buttonType="RAISED" layoutX="147.0" layoutY="476.0" prefHeight="46.0" prefWidth="159.0" style="-fx-background-color: GRAY;" text="Delete" textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="TIMES" size="20" />
+               </graphic>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <Pane fx:id="_AddForm" layoutX="123.0" layoutY="136.0" prefHeight="390.0" prefWidth="338.0" style="-fx-border-color: black; -fx-background-color: white;" visible="false">
+         <children>
+            <Label layoutX="24.0" layoutY="14.0" prefHeight="31.0" prefWidth="159.0" text="Adding Category...">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="_id" alignment="CENTER" layoutX="54.0" layoutY="76.0" promptText="ID" />
+            <JFXTextField fx:id="_name" layoutX="54.0" layoutY="149.0" promptText="Category Name" />
+            <JFXTextField disable="true" editable="false" layoutX="54.0" layoutY="226.0" text="\$AdminName" />
+            <JFXButton fx:id="_confirm" layoutX="62.0" layoutY="308.0" prefHeight="31.0" prefWidth="113.0" style="-fx-background-color: red;" text="Confirm" textFill="#f8f8f8" />
+            <JFXButton fx:id="_cancel" layoutX="222.0" layoutY="311.0" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: green;" text="Cancel" textFill="WHITE" />
+         </children>
+         <effect>
+            <DropShadow />
+         </effect></Pane>
+
+   </children>
+</AnchorPane>

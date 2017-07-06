@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="root" alignment="TOP_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="700.0" minWidth="1200.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: rgba(245, 249, 254, 1);">
+         <effect>
+            <InnerShadow />
+         </effect>
+         <children>
+            <HBox fx:id="welcomepane" alignment="CENTER" prefHeight="700.0" prefWidth="457.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <FontAwesomeIconView fill="#2a4365" glyphName="THUMBS_UP" size="35" />
+                  <Label text=" Welcome  " textFill="#2a4365">
+                     <font>
+                        <Font name="Eras Medium ITC" size="42.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="welcomeAdminName" text="#ADMIN NAME" textFill="#2a4365" underline="true">
+                     <font>
+                        <Font name="Eras Medium ITC" size="27.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <BorderPane fx:id="layout" cache="true" cacheHint="QUALITY" depthTest="ENABLE" focusTraversable="true" pickOnBounds="false" style="-fx-background-color: rgba(207, 208, 214, 1);" visible="false">
+         <bottom>
+            <HBox focusTraversable="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="1300.0" spacing="10.0" style="-fx-background-color: rgba(42, 67, 101, 1);">
+               <children>
+                  <ImageView fx:id="close" fitHeight="22.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Resources/Images/turnoff.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Label text="Exit" textFill="#aec7ef" />
+                  <ImageView fx:id="signout" fitHeight="21.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Resources/Images/relogin.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Label layoutX="62.0" layoutY="10.0" text="Sign out" textFill="#aec7ef" />
+               </children>
+            </HBox>
+         </bottom>
+         <left>
+            <VBox accessibleRole="MENU" prefHeight="757.0" prefWidth="255.0" style="-fx-background-color: rgba(37, 54, 81, 1);" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="81.0" prefWidth="254.0" spacing="20.0" VBox.vgrow="NEVER">
+                     <children>
+                        <ImageView fitHeight="32.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="30.0" translateY="20.0" HBox.hgrow="NEVER">
+                           <image>
+                              <Image url="@../Resources/Images/auctionevent.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="102" textFill="#fcfcfc" translateX="-15.0" translateY="50.0" />
+                        <Label prefHeight="17.0" prefWidth="29.0" text="1,225" textFill="WHITE" translateX="115.0" translateY="50.0" HBox.hgrow="NEVER" />
+                        <ImageView fx:id="profilePicture" cache="true" cacheHint="QUALITY" fitHeight="71.0" fitWidth="92.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" translateX="-40.0" HBox.hgrow="NEVER">
+                           <image>
+                              <Image url="@../Resources/Images/admin.jpg" />
+                           </image>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-20.0" translateY="20.0" HBox.hgrow="NEVER">
+                           <image>
+                              <Image url="@../Resources/Images/event.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <Label fx:id="AdminName" alignment="CENTER" prefHeight="20.0" prefWidth="253.0" text="Mohamed Elhosany" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="255.0" text="System Administrator " textFill="WHITE" />
+                  <Label prefHeight="17.0" prefWidth="82.0" style="-fx-text-fill: rgba(119, 152, 206, 1);" text="Navigation">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="5.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Line endX="150.0" fill="#362f86" startX="-100.0" stroke="#4642aa7d" strokeLineJoin="ROUND" strokeMiterLimit="15.0" VBox.vgrow="NEVER">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Line>
+                  <HBox alignment="CENTER">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <JFXButton fx:id="Dashboard" alignment="TOP_LEFT" focusTraversable="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="43.0" prefWidth="249.0" text="        Dashboard" textFill="WHITE" wrapText="true" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="Gill Sans MT Bold" size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="29.0" translateX="10.0">
+                                 <image>
+                                    <Image url="@../Resources/Images/dash.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <HBox spacing="10.0">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <JFXButton fx:id="Manage_Category" alignment="TOP_LEFT" focusTraversable="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="43.0" prefWidth="255.0" text="        Manage Category" textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font name="Gill Sans MT Bold" size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="29.0" translateX="10.0">
+                                 <image>
+                                    <Image url="@../Resources/Images/categ.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <HBox spacing="10.0">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <JFXButton fx:id="Manage_items" alignment="TOP_LEFT" focusTraversable="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="43.0" prefWidth="255.0" text="        Manage items" textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font name="Gill Sans MT Bold" size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="29.0" translateX="10.0">
+                                 <image>
+                                    <Image url="@../Resources/Images/Mitem.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="49.0" prefWidth="255.0" spacing="10.0">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <JFXButton fx:id="Mang_auction_session" alignment="TOP_LEFT" focusTraversable="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="54.0" prefWidth="255.0" text="       Manage Auction Sessions" textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font name="Gill Sans MT Bold" size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="29.0" translateX="10.0">
+                                 <image>
+                                    <Image url="@../Resources/Images/Msession.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <Label prefHeight="21.0" prefWidth="96.0" style="-fx-text-fill: rgba(119, 152, 206, 1);" text="Components">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Line endX="150.0" fill="#362f86" startX="-100.0" stroke="#4542a86d" strokeLineJoin="ROUND" strokeMiterLimit="15.0">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </Line>
+                  <HBox spacing="10.0">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <JFXButton fx:id="Mang_users" alignment="TOP_LEFT" focusTraversable="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="43.0" prefWidth="257.0" text="        Manage Users" textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font name="Gill Sans MT Bold" size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="29.0" translateX="10.0">
+                                 <image>
+                                    <Image url="@../Resources/Images/Muser.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <HBox spacing="10.0">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <JFXButton fx:id="Manag_db" alignment="TOP_LEFT" focusTraversable="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="43.0" prefWidth="275.0" text="       Manage Database" textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font name="Gill Sans MT Bold" size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="29.0" translateX="10.0">
+                                 <image>
+                                    <Image url="@../Resources/Images/dbM.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <HBox spacing="10.0">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <JFXButton fx:id="stats" alignment="TOP_LEFT" focusTraversable="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="43.0" prefWidth="261.0" text="       Database Statictics" textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font name="Gill Sans MT Bold" size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="29.0" translateX="10.0">
+                                 <image>
+                                    <Image url="@../Resources/Images/categ.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+               <effect>
+                  <Blend />
+               </effect>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </VBox>
+         </left>
+         <top>
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="42.0" prefWidth="1014.0" style="-fx-background-color: white;" BorderPane.alignment="TOP_LEFT">
+               <children>
+                  <Label alignment="CENTER" blendMode="SRC_ATOP" cacheShape="false" centerShape="false" contentDisplay="CENTER" focusTraversable="false" prefHeight="50.0" prefWidth="254.0" scaleShape="false" style="-fx-background-color: rgba(57, 82, 123, 1);" text="Control Panel" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Britannic Bold" size="26.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" cache="true" cacheHint="SPEED" depthTest="DISABLE" fillHeight="false" focusTraversable="true" layoutX="888.0" layoutY="8.0" nodeOrientation="LEFT_TO_RIGHT" spacing="20.0" AnchorPane.rightAnchor="30.0">
+                     <children>
+                        <JFXTextField fx:id="search_bar" minWidth="159.0" prefColumnCount="10" prefHeight="35.0" prefWidth="267.0" promptText="Search for anything" visible="false" />
+                        <FontAwesomeIconView fx:id="search" focusTraversable="true" glyphName="SEARCH" size="17">
+                           <HBox.margin>
+                              <Insets right="10.0" top="2.0" />
+                           </HBox.margin>
+                        </FontAwesomeIconView>
+                        <MaterialDesignIconView fx:id="full" focusTraversable="true" glyphName="FULLSCREEN" size="25" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
+               </children>
+               <effect>
+                  <DropShadow height="38.57" radius="9.1425" width="0.0" />
+               </effect>
+            </AnchorPane>
+         </top>
+         <center>
+            <StackPane fx:id="layoutContent" depthTest="DISABLE" pickOnBounds="false" prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: white;">
+               <BorderPane.margin>
+                  <Insets top="3.0" />
+               </BorderPane.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></StackPane>
+         </center>
+         <right>
+            <VBox fx:id="right_pane" alignment="TOP_CENTER" cache="true" cacheHint="QUALITY" cacheShape="false" centerShape="false" focusTraversable="true" pickOnBounds="false" prefHeight="663.0" prefWidth="320.0" scaleShape="false" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Active Events" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Berlin Sans FB" size="23.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="15.0" top="12.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ScrollPane fx:id="event_pane" focusTraversable="false" hbarPolicy="NEVER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="594.0" prefWidth="320.0" style="-fx-background-color: white;">
+                     <content>
+                        <VBox fx:id="notificationspane" prefHeight="651.0" prefWidth="304.0" spacing="5.0" style="-fx-background-color: white;">
+                           <children>
+                              <DialogPane nodeOrientation="LEFT_TO_RIGHT">
+                                 <graphic>
+                                    <ImageView fitHeight="73.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Resources/Images/6.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <content>
+                                    <StackPane prefHeight="110.0" prefWidth="233.0">
+                                       <children>
+                                          <Label style="-fx-text-fill: #42a5f5;" text="A Seller Request To Add his Item To Tv's Category and System Need Your Approve To Add This Item" wrapText="true" StackPane.alignment="TOP_LEFT">
+                                             <StackPane.margin>
+                                                <Insets />
+                                             </StackPane.margin>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label style="-fx-text-fill: rgba(13, 210, 125, 1);" text="Committed by : " underline="true" StackPane.alignment="BOTTOM_LEFT">
+                                             <StackPane.margin>
+                                                <Insets />
+                                             </StackPane.margin>
+                                             <font>
+                                                <Font name="System Bold Italic" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" style="-fx-text-fill: rgba(13, 210, 125, 1);" text="Hasan" underline="true" StackPane.alignment="CENTER">
+                                             <font>
+                                                <Font name="System Bold Italic" size="13.0" />
+                                             </font>
+                                             <StackPane.margin>
+                                                <Insets left="25.0" top="70.0" />
+                                             </StackPane.margin>
+                                          </Label>
+                                          <JFXButton style="-fx-background-color: #F44336;" text="Next" textFill="#f5f5f5" StackPane.alignment="BOTTOM_RIGHT" />
+                                       </children>
+                                    </StackPane>
+                                 </content>
+                              </DialogPane>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+               <BorderPane.margin>
+                  <Insets top="3.0" />
+               </BorderPane.margin>
+            </VBox>
+         </right>
+      </BorderPane>
+   </children>
+</StackPane>

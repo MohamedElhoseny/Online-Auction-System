@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="_viewpane" prefHeight="604.0" prefWidth="716.0" style="-fx-background-color: rgba(245, 249, 254, 1);" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="81.0" layoutY="30.0" prefHeight="27.0" prefWidth="300.0" text="  Manage Database System" textFill="#141313">
+         <font>
+            <Font name="Eras Medium ITC" size="22.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="DATABASE" size="25" wrappingWidth="27.14285659790039" />
+         </graphic>
+      </Label>
+      <Separator layoutX="81.0" layoutY="78.0" prefWidth="300.0" />
+      <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="114.0" prefHeight="485.0" prefWidth="698.0" style="-fx-background-color: rgba(245, 249, 254, 1);" vbarPolicy="ALWAYS">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1438.0" prefWidth="670.0" style="-fx-background-color: rgba(245, 249, 254, 1);">
+               <children>
+                  <Label layoutX="45.0" layoutY="29.0" text=" User's Table">
+                     <font>
+                        <Font name="Eras Medium ITC" size="21.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="TABLE" size="20" />
+                     </graphic>
+                  </Label>
+                  <TreeTableView fx:id="userstable1" layoutX="39.0" layoutY="403.0" prefHeight="261.0" prefWidth="606.0">
+                     <columns>
+                        <TreeTableColumn prefWidth="75.0" text="#ID" />
+                        <TreeTableColumn prefWidth="100.0" text="Name" />
+                        <TreeTableColumn prefWidth="106.0" text="Seller" />
+                        <TreeTableColumn prefWidth="122.0" text="Start Prize" />
+                        <TreeTableColumn prefWidth="106.0" text="Session" />
+                        <TreeTableColumn prefWidth="108.0" text="Catalog" />
+                     </columns>
+                  </TreeTableView>
+                  <Label layoutX="39.0" layoutY="359.0" text=" Product's Table">
+                     <font>
+                        <Font name="Eras Medium ITC" size="21.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="TABLE" size="20" />
+                     </graphic>
+                  </Label>
+                  <TreeTableView fx:id="userstable2" layoutX="49.0" layoutY="78.0" prefHeight="261.0" prefWidth="606.0">
+                     <columns>
+                        <TreeTableColumn prefWidth="75.0" text="#ID" />
+                        <TreeTableColumn prefWidth="100.0" text="Fname" />
+                        <TreeTableColumn prefWidth="106.0" text="Lname" />
+                        <TreeTableColumn prefWidth="153.0" text="Email" />
+                        <TreeTableColumn prefWidth="75.0" text="Password" />
+                        <TreeTableColumn prefWidth="108.0" text="Gender" />
+                     </columns>
+                  </TreeTableView>
+                  <Label layoutX="45.0" layoutY="1031.0" text=" User's Table">
+                     <font>
+                        <Font name="Eras Medium ITC" size="21.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="TABLE" size="20" />
+                     </graphic>
+                  </Label>
+                  <TreeTableView fx:id="userstable11" layoutX="39.0" layoutY="730.0" prefHeight="261.0" prefWidth="358.0">
+                     <columns>
+                        <TreeTableColumn prefWidth="134.0" text="#ID" />
+                        <TreeTableColumn minWidth="8.0" prefWidth="230.0" text="Name" />
+                     </columns>
+                  </TreeTableView>
+                  <Label layoutX="45.0" layoutY="690.0" text=" Catalog's Table">
+                     <font>
+                        <Font name="Eras Medium ITC" size="21.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="TABLE" size="20" />
+                     </graphic>
+                  </Label>
+                  <TreeTableView fx:id="userstable" layoutX="32.0" layoutY="1076.0" prefHeight="261.0" prefWidth="606.0">
+                     <columns>
+                        <TreeTableColumn prefWidth="75.0" text="#ID" />
+                        <TreeTableColumn prefWidth="100.0" text="Fname" />
+                        <TreeTableColumn prefWidth="106.0" text="Lname" />
+                        <TreeTableColumn prefWidth="153.0" text="Email" />
+                        <TreeTableColumn prefWidth="75.0" text="Password" />
+                        <TreeTableColumn prefWidth="108.0" text="Gender" />
+                     </columns>
+                  </TreeTableView>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

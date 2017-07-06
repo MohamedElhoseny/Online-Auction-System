@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.validation.RequiredFieldValidator?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="root" alignment="center" prefHeight="697.0" prefWidth="1192.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane fx:id="registrationPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" styleClass="startup_bg" visible="false" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+         <children>
+            <Pane fx:id="registeration_form" nodeOrientation="LEFT_TO_RIGHT" prefHeight="536.0" prefWidth="888.0" style="-fx-background-color: transparent;" translateX="150.0" translateY="100.0" AnchorPane.bottomAnchor="161.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="304.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="24.0" layoutY="25.0" prefHeight="46.0" prefWidth="195.0" text="Online Auction System." textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="44.0" layoutY="314.0" prefHeight="46.0" prefWidth="156.0" text="System Developers" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="66.0" layoutY="352.0" prefHeight="38.0" prefWidth="113.0" text="* Mohamed Elhosany" textFill="WHITE" wrapText="true" />
+                  <Pane fx:id="SigninForm" layoutX="444.0" layoutY="37.0" prefHeight="468.0" prefWidth="383.0" style="-fx-background-color: #D7CCC8;" visible="false">
+                     <children>
+                        <Label layoutX="106.0" layoutY="23.0" text="Sign in">
+                           <font>
+                              <Font name="Eras Medium ITC" size="38.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="51.0" layoutY="94.0" text="Log in With your Email address instead of Username" />
+                        <Label layoutX="67.0" layoutY="144.0" text="* Fill The Fields" textFill="#4c9a0b" />
+                        <TextField fx:id="login_email" layoutX="67.0" layoutY="193.0" prefHeight="46.0" prefWidth="207.0" promptText="Email Address" style="-fx-background-color: transparent; -fx-border-color: gray;">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </TextField>
+                        <PasswordField fx:id="login_pass" layoutX="67.0" layoutY="265.0" prefHeight="46.0" prefWidth="207.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: gray;">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </PasswordField>
+                        <JFXButton fx:id="login" layoutX="78.0" layoutY="358.0" onAction="#Login" prefHeight="37.0" prefWidth="138.0" style="-fx-background-color: #10445d;" text="Log in" textFill="WHITE" />
+                        <FontAwesomeIconView fill="#10445d" glyphName="SIGN_IN" layoutX="239.0" layoutY="56.0" size="30" wrappingWidth="23.57144856452942" />
+                        <FontAwesomeIconView fx:id="logEmailsign" fill="#dd1b1b" glyphName="TIMES_CIRCLE" layoutX="295.0" layoutY="222.0" size="20" visible="false" />
+                        <FontAwesomeIconView fx:id="logPasssign" fill="#e42121" glyphName="TIMES_CIRCLE" layoutX="295.0" layoutY="294.0" size="20" visible="false" />
+                        <Label fx:id="linktoreg" layoutX="231.0" layoutY="378.0" text="Don't Have an account ?" textFill="#10445d" underline="true" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="reg_content" layoutX="417.0" layoutY="3.0" prefHeight="529.0" prefWidth="432.0" style="-fx-background-color: #D7CCC8;">
+                     <children>
+                        <Label layoutX="195.0" layoutY="28.0" text="Already have an account ?" />
+                        <JFXButton fx:id="signin" layoutX="346.0" layoutY="25.0" style="-fx-background-color: #10445d;" text="Sign in" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <Label layoutX="24.0" layoutY="20.0" text="Create an account">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="27.0" layoutY="40.0" text="It's free and always will be ." />
+                        <JFXTextField fx:id="Fname" layoutX="24.0" layoutY="166.0" maxWidth="138.0" minWidth="108.0" prefHeight="37.0" prefWidth="138.0" promptText=" First name" styleClass="reg_txtfield" />
+                        <JFXTextField fx:id="Lname" layoutX="159.0" layoutY="166.0" maxWidth="150.0" minWidth="120.0" prefHeight="37.0" prefWidth="150.0" promptText="Last name" styleClass="reg_txtfield" />
+                        <JFXTextField fx:id="email" layoutX="24.0" layoutY="210.0" maxWidth="359.0" minWidth="248.0" prefHeight="37.0" prefWidth="285.0" promptText="Email Address" styleClass="reg_txtfield">
+                           <validators>
+                              <RequiredFieldValidator message="Email Address Required!" />
+                           </validators>
+                        </JFXTextField>
+                        <JFXPasswordField fx:id="pass1" layoutX="26.0" layoutY="258.0" minWidth="108.0" prefHeight="37.0" prefWidth="128.0" promptText="Password" styleClass="reg_txtfield">
+                            <validators>
+                                <RequiredFieldValidator message="Password Required!" />
+                            </validators>
+                        </JFXPasswordField>
+                        <JFXPasswordField fx:id="pass2" layoutX="160.0" layoutY="258.0" maxWidth="150.0" minWidth="120.0" prefHeight="37.0" prefWidth="150.0" promptText="Re-enter Password" styleClass="reg_txtfield">
+                            <validators>
+                                <RequiredFieldValidator message="Password Required!" />
+                            </validators>
+                        </JFXPasswordField>
+                        <JFXTextField fx:id="phone" layoutX="24.0" layoutY="312.0" maxWidth="285.0" minWidth="108.0" prefHeight="37.0" prefWidth="285.0" promptText="Phone Number" styleClass="reg_txtfield" />
+                        <Label layoutX="32.0" layoutY="358.0" text="Your Birthday">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="dd" layoutX="30.0" layoutY="393.0" prefHeight="27.0" prefWidth="69.0" promptText="Day" style="-fx-border-color: black;" styleClass="reg_txtfield" />
+                        <ComboBox fx:id="mm" layoutX="112.0" layoutY="393.0" prefHeight="27.0" prefWidth="83.0" promptText="Month" style="-fx-border-color: black;" styleClass="reg_txtfield" />
+                        <ComboBox fx:id="yy" layoutX="211.0" layoutY="393.0" prefHeight="27.0" prefWidth="76.0" promptText="Year" style="-fx-border-color: black;" styleClass="reg_txtfield" />
+                        <RadioButton fx:id="male" layoutX="117.0" layoutY="449.0" mnemonicParsing="false" selected="true" text="Male" />
+                        <RadioButton fx:id="female" layoutX="187.0" layoutY="449.0" mnemonicParsing="false" text="Female" />
+                        <JFXButton buttonType="RAISED" layoutX="103.0" layoutY="488.0" onAction="#Register" prefHeight="27.0" prefWidth="207.0" style="-fx-background-color: #10445d;" text="Create an account" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fx:id="profile_picture" fitHeight="61.0" fitWidth="79.0" layoutX="33.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/Images/defaultFace.png" />
+                           </image>
+                        </ImageView>
+                        <JFXComboBox fx:id="role" layoutX="107.0" layoutY="76.0" prefHeight="25.0" prefWidth="120.0" promptText="Your Role" />
+                        <Label fx:id="chosepic" layoutX="107.0" layoutY="120.0" prefHeight="17.0" prefWidth="120.0" text="Choose Profile Picture" underline="true">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Label>
+                        <ListView fx:id="pic_pane" layoutX="185.0" layoutY="69.0" orientation="HORIZONTAL" pickOnBounds="false" prefHeight="61.0" prefWidth="246.0" style="-fx-background-color: white;" styleClass="jfx-list-view" visible="false">
+
+                              <ImageView fx:id="1" fitHeight="46.0" fitWidth="61.0" preserveRatio="true">
+                                  <image>
+                                      <Image url="@../Resources/Images/faces/2.png" />
+                                  </image>
+                              </ImageView>
+                                <ImageView fx:id="2" fitHeight="51.0" fitWidth="50.0" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Resources/Images/faces/3.png" />
+                                    </image>
+                                </ImageView>
+
+                                <ImageView fx:id="3" fitHeight="46.0" fitWidth="61.0" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Resources/Images/faces/5.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fx:id="4" fitHeight="46.0" fitWidth="61.0" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Resources/Images/faces/4.png" />
+                                    </image>
+                                </ImageView>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+
+                        </ListView>
+                        <Label layoutX="32.0" layoutY="430.0" text="Your Gender">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fx:id="bdicon" fill="#d7ccc8" glyphName="" layoutX="314.0" layoutY="413.0" size="15" text="" />
+                        <FontAwesomeIconView fx:id="roleicon" fill="#d7ccc8" layoutX="249.0" layoutY="93.0" size="15" />
+                        <FontAwesomeIconView fx:id="namemsg" layoutX="316.0" layoutY="195.0" visible="false" />
+                        <FontAwesomeIconView fx:id="emailmsg" layoutX="316.0" layoutY="239.0" visible="false" />
+                        <FontAwesomeIconView fx:id="passmsg" layoutX="316.0" layoutY="287.0" visible="false" />
+                        <FontAwesomeIconView fx:id="phonemsg" layoutX="316.0" layoutY="343.0" text="" visible="false" />
+                     </children>
+                  </Pane>
+                  <Label layoutX="69.0" layoutY="128.0" prefHeight="107.0" prefWidth="264.0" text="In Our System You Have Ability to Sell and Submit a Sessions For Your Products beside the Features That Our System reserve as 'See Bidders Details' that Submit Bid for Your Product" textFill="WHITE" wrapText="true" />
+                  <Label layoutX="44.0" layoutY="105.0" prefHeight="46.0" prefWidth="156.0" text="About System " textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="69.0" layoutY="225.0" prefHeight="71.0" prefWidth="264.0" text="In Addition , if You are a Bidder You Can Submit Bids and You Will Notify for all events about Your Submitted Bids. " textFill="WHITE" wrapText="true" />
+                  <Label layoutX="219.0" layoutY="352.0" prefHeight="38.0" prefWidth="113.0" text="* Islam Mohamed" textFill="WHITE" wrapText="true" />
+                  <Label layoutX="66.0" layoutY="383.0" prefHeight="38.0" prefWidth="113.0" text="* Hassan Hamdy" textFill="WHITE" wrapText="true" />
+                  <Label layoutX="219.0" layoutY="383.0" prefHeight="38.0" prefWidth="113.0" text="* Usama Nabil" textFill="WHITE" wrapText="true" />
+                  <Label layoutX="65.0" layoutY="414.0" prefHeight="38.0" prefWidth="113.0" text="* Tawfek Mohamed" textFill="WHITE" wrapText="true" />
+                  <Separator layoutX="24.0" layoutY="87.0" prefWidth="200.0" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="CHECK" layoutX="24.0" layoutY="132.0" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="CHECK" layoutX="24.0" layoutY="341.0" />
+               </children>
+            </Pane>
+            <FontAwesomeIconView fx:id="close" fill="WHITE" glyphName="TIMES" layoutX="1144.0" layoutY="40.0" size="30" smooth="false" style="-fx-fill: white;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></FontAwesomeIconView>
+            <Label layoutX="1063.0" layoutY="645.0" prefHeight="38.0" prefWidth="85.0" text="\@ 2016 - 2017" textFill="WHITE" wrapText="true" />
+         </children>
+      </AnchorPane>
+      <FlowPane fx:id="titlePane" alignment="CENTER" columnHalignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="471.0">
+         <children>
+            <ImageView fx:id="logo" fitHeight="81.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Resources/Images/reg/logo.PNG" />
+               </image>
+            </ImageView>
+            <Label fx:id="minititle" prefHeight="38.0" prefWidth="348.0" text="Online Auction " textFill="#5475fc">
+               <font>
+                  <Font name="Arial" size="33.0" />
+               </font>
+               <FlowPane.margin>
+                  <Insets left="40.0" top="10.0" />
+               </FlowPane.margin>
+            </Label>
+            <Label fx:id="sys" prefHeight="61.0" prefWidth="120.0" text="System" textFill="#3b3b3c">
+               <font>
+                  <Font name="Arial" size="30.0" />
+               </font>
+               <FlowPane.margin>
+                  <Insets left="-125.0" top="10.0" />
+               </FlowPane.margin>
+            </Label>
+         </children>
+      </FlowPane>
+   </children>
+   <effect>
+      <InnerShadow />
+   </effect>
+</StackPane>

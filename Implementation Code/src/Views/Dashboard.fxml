@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="_Dashboard" prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: rgba(245, 249, 254, 1);" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AreaChart fx:id="sessions_chart" layoutX="14.0" layoutY="42.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" title="Online Auction Sessions" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="73.0">
+         <xAxis>
+            <CategoryAxis label="Sessions Times &amp; Duration" side="BOTTOM" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis label="Bids Per session" side="LEFT" />
+         </yAxis>
+      </AreaChart>
+      <HBox fx:id="state" layoutY="485.0" AnchorPane.leftAnchor="25.0">
+         <children>
+            <BorderPane prefHeight="117.0" prefWidth="210.0" style="-fx-background-color: white;">
+               <left>
+                  <ImageView fitHeight="89.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" translateY="-10.0" BorderPane.alignment="CENTER">
+                     <image>
+                        <Image url="@../Resources/Images/users.PNG" />
+                     </image>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                  </ImageView>
+               </left>
+               <top>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="237.0" style="-fx-text-fill: rgba(156, 151, 135, 1);" text="Users" translateY="25.0" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <BorderPane.margin>
+                        <Insets right="10.0" />
+                     </BorderPane.margin>
+                  </Label>
+               </top>
+               <center>
+                  <HBox alignment="CENTER" prefHeight="41.0" prefWidth="145.0" BorderPane.alignment="CENTER_RIGHT">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="52.0" text="Total:" HBox.hgrow="NEVER">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="30.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="userscount" alignment="CENTER" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="30.0" prefWidth="55.0" style="-fx-text-fill: rgba(13, 210, 125, 1);" text="25" translateX="-30.0" HBox.hgrow="NEVER">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets right="10.0" />
+                     </BorderPane.margin>
+                  </HBox>
+               </center>
+            </BorderPane>
+            <BorderPane prefHeight="116.0" prefWidth="186.0" style="-fx-background-color: white;">
+               <left>
+                  <ImageView fitHeight="89.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" translateY="-10.0" BorderPane.alignment="CENTER">
+                     <image>
+                        <Image url="@../Resources/Images/Daily.PNG" />
+                     </image>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                  </ImageView>
+               </left>
+               <top>
+                  <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="32.0" prefWidth="115.0" style="-fx-text-fill: rgba(156, 151, 135, 1);" text="Daily Sales" translateX="25.0" translateY="25.0" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                  </Label>
+               </top>
+               <center>
+                  <HBox alignment="CENTER" prefHeight="58.0" prefWidth="123.0" BorderPane.alignment="CENTER_RIGHT">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="52.0" text="Total:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="salescount" alignment="CENTER" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="30.0" prefWidth="55.0" style="-fx-text-fill: rgba(13, 210, 125, 1);" text="1075">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </center>
+            </BorderPane>
+            <BorderPane prefHeight="116.0" prefWidth="210.0" style="-fx-background-color: white;">
+               <left>
+                  <ImageView fitHeight="53.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" translateY="-15.0" BorderPane.alignment="CENTER">
+                     <image>
+                        <Image url="@../Resources/Images/req.PNG" />
+                     </image>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                  </ImageView>
+               </left>
+               <top>
+                  <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="32.0" prefWidth="154.0" style="-fx-text-fill: rgba(156, 151, 135, 1);" text="Requests" translateY="25.0" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                  </Label>
+               </top>
+               <center>
+                  <HBox alignment="CENTER" prefHeight="58.0" prefWidth="123.0" BorderPane.alignment="CENTER_RIGHT">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="52.0" text="Total:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="requestcount" alignment="CENTER" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="30.0" prefWidth="55.0" style="-fx-text-fill: rgba(13, 210, 125, 1);" text="1075">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </center>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </BorderPane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

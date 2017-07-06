@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="448.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/8.0.131" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.lockedController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="78.0" fitWidth="113.0" layoutX="22.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="348.0" AnchorPane.topAnchor="7.0">
+         <image>
+            <Image url="@../Resources/Images/sad.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="116.0" layoutY="29.0" prefHeight="50.0" prefWidth="298.0" text="Sorry , There 's another Program Instance Running , Please Close All  Running Program Instance ." wrapText="true" AnchorPane.bottomAnchor="51.0" AnchorPane.leftAnchor="116.0" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="29.0">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="295.0" layoutY="85.0" onAction="#close" prefHeight="25.0" prefWidth="126.0" style="-fx-background-color: #4190e4;" text="Close" textFill="WHITE" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="295.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="85.0" />
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+</AnchorPane>

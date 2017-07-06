@@ -1,0 +1,1326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXBadge?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXSnackbar?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<StackPane fx:id="root" alignment="TOP_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" nodeOrientation="LEFT_TO_RIGHT" prefHeight="720.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane fx:id="Parent" prefHeight="646.0" prefWidth="1300.0" style="-fx-background-color: #FFF;" visible="false">
+         <top>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="59.0" prefWidth="1391.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <effect>
+                        <DropShadow height="19.285" radius="4.32125" width="0.0" />
+                     </effect>
+                     <children>
+                        <Label alignment="CENTER" prefHeight="59.0" prefWidth="227.0" style="-fx-background-color: rgba(65, 184, 230, 1);" text="Your Profile " textFill="WHITE">
+                           <font>
+                              <Font name="SansSerif Bold" size="19.0" />
+                           </font>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="GROUP" size="20" />
+                           </graphic>
+                        </Label>
+                        <HBox alignment="CENTER" cache="true" cacheHint="SPEED" depthTest="DISABLE" fillHeight="false" focusTraversable="true" layoutX="1170.0" layoutY="16.0" nodeOrientation="LEFT_TO_RIGHT" spacing="5.0" AnchorPane.rightAnchor="25.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <children>
+                              <FontAwesomeIconView fill="#41b8e6" glyphName="COGS" size="20" />
+                              <Label alignment="CENTER" prefHeight="26.0" prefWidth="57.0" text="Setting">
+                                 <font>
+                                    <Font name="Segoe UI Bold Italic" size="17.0" />
+                                 </font>
+                              </Label>
+                              <FontAwesomeIconView fx:id="setting" glyphName="CARET_DOWN" size="18">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </FontAwesomeIconView>
+                           </children>
+                        </HBox>
+                        <Label layoutX="488.0" layoutY="18.0" onMouseClicked="#setFullscreen" text="Enter Full Screen">
+                           <graphic>
+                              <FontAwesomeIconView fill="#6aa5e2" glyphName="TV" size="22" text="">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </FontAwesomeIconView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                        <Label fx:id="edit_info" layoutX="293.0" layoutY="17.0" text="Edit information">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="#6aa5e2" glyphName="EDIT" size="22">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </FontAwesomeIconView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                        <Separator layoutX="1118.0" layoutY="15.0" orientation="VERTICAL" prefHeight="32.0" AnchorPane.rightAnchor="176.0" />
+
+                        <!-- bg and profile -->
+                        <Label layoutX="668.0" layoutY="17.0" onMouseClicked="#check_currently_bids" text="Currently in Bids">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <MaterialDesignIconView fill="#ff3232" glyphName="TIMER" size="25" />
+                           </graphic>
+                        </Label>
+                        <FontAwesomeIconView fx:id="minimize" fill="#41b8e6" glyphName="MINUS_CIRCLE" layoutX="1141.0" layoutY="35.0" size="20" AnchorPane.rightAnchor="141.8571434020996">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </FontAwesomeIconView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="slider" layoutX="14.0" layoutY="60.0" prefHeight="170.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                     <children>
+                        <StackPane fx:id="background" alignment="CENTER_LEFT" layoutX="227.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="1073.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="227.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <AnchorPane prefHeight="200.0" prefWidth="228.0" style="-fx-background-color: rgba(46, 45, 54, 1); -fx-border-color: black;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ImageView fx:id="profilePicture" fitHeight="127.0" fitWidth="89.0" layoutX="70.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" styleClass="profilepic" AnchorPane.topAnchor="21.0">
+                                 <image>
+                                    <Image url="@../Resources/Images/ProfilePics/b6.jpg" />
+                                 </image>
+                              </ImageView>
+                              <FontAwesomeIconView fill="LIME" glyphName="CIRCLE" layoutX="173.0" layoutY="138.0" size="15.0" wrappingWidth="16.857142448425293" AnchorPane.rightAnchor="38.14285755157471" />
+                              <Label fx:id="UserName" alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="152.0" prefHeight="23.0" prefWidth="217.0" text="Reda Zaher" textFill="WHITE" AnchorPane.bottomAnchor="28.0">
+                                 <font>
+                                    <Font name="Eras Demi ITC" size="19.0" />
+                                 </font>
+                                 <effect>
+                                    <Reflection topOpacity="0.2" />
+                                 </effect>
+                              </Label>
+                           </children>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </AnchorPane>
+                        <VBox fx:id="settingpane" layoutX="1153.0" layoutY="-3.0" prefHeight="127.0" prefWidth="145.0" style="-fx-background-color: white;" visible="false" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="-3.0">
+                           <children>
+                              <JFXButton fx:id="hide" prefHeight="41.0" prefWidth="145.0" text="Hide">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="exitSys" layoutX="10.0" layoutY="10.0" prefHeight="44.0" prefWidth="144.0" text="Exit">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="signout" layoutX="10.0" layoutY="35.0" prefHeight="40.0" prefWidth="145.0" text="Sign out">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="460.0" prefWidth="1300.0" style="-fx-background-color: #FFF;" BorderPane.alignment="CENTER_LEFT">
+               <children>
+                  <Label layoutX="48.0" layoutY="5.0" text="Categorize Menu" textFill="#36c6ff">
+                     <font>
+                        <Font name="Pristina" size="25.0" />
+                     </font>
+                  </Label>
+                  <HBox fx:id="searchbar" alignment="TOP_RIGHT" layoutX="230.0" pickOnBounds="false" prefHeight="50.0" prefWidth="1061.0" spacing="10.0" style="-fx-background-color: white;" visible="false" AnchorPane.leftAnchor="230.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" height="9.02" radius="1.755" width="0.0" />
+                     </effect>
+                     <children>
+                        <JFXButton fx:id="hideSearchbar" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="1023.0" layoutY="10.0" prefHeight="50.0" prefWidth="44.0" style="-fx-background-color: gray;" HBox.hgrow="ALWAYS">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" size="20" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXTextField fx:id="searchInput" focusColor="#4fc3f7" maxWidth="715.0" minHeight="44.0" minWidth="100.0" prefHeight="50.0" prefWidth="558.0" promptText="Search for product" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="searchbar_text" />
+                              <String fx:value="searchinput" />
+                           </styleClass></JFXTextField>
+                        <VBox prefHeight="50.0" prefWidth="411.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="22.0" prefWidth="126.0" text="Filter by" textAlignment="RIGHT" textFill="#9e9696" translateX="150.0">
+                                 <font>
+                                    <Font name="Californian FB Italic" size="17.0" />
+                                 </font>
+                              </Label>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <JFXComboBox fx:id="categories" prefHeight="25.0" prefWidth="149.0" promptText="Category" style="-fx-background-color: white;" />
+                                    <JFXComboBox fx:id="dates" prefHeight="25.0" prefWidth="121.0" promptText="Date" style="-fx-background-color: white;" />
+                                    <JFXComboBox fx:id="sessions" prefHeight="25.0" prefWidth="117.0" promptText="Time" style="-fx-background-color: white;" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <JFXButton fx:id="resetsearch" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="48.0" ripplerFill="WHITE" rotate="90.0" style="-fx-background-color: #4fc3f7;" text="Reset" textFill="WHITE" translateX="15.0" translateY="3.0" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="SansSerif Regular" size="12.0" />
+                           </font></JFXButton>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="menubar" alignment="TOP_RIGHT" layoutX="230.0" layoutY="10.0" pickOnBounds="false" prefHeight="50.0" prefWidth="1071.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="229.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" height="9.02" radius="1.755" width="0.0" />
+                     </effect>
+                     <children>
+                        <JFXTabPane fx:id="tabmenu" prefHeight="50.0" prefWidth="1027.0" rotateGraphic="true" tabMinHeight="50.0" tabMinWidth="200.0" HBox.hgrow="ALWAYS">
+                           <tabs>
+                              <Tab fx:id="Home" text="Home" userData="omda" />
+                           </tabs>
+                        </JFXTabPane>
+                        <JFXButton fx:id="search" contentDisplay="GRAPHIC_ONLY" prefHeight="48.0" prefWidth="45.0" style="-fx-background-color: rgba(42, 184, 199, 1);" HBox.hgrow="ALWAYS">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="18.0" />
+                           </graphic>
+                           <HBox.margin>
+                              <Insets top="1.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <ScrollPane fx:id="scrollpane" focusTraversable="false" hbarPolicy="NEVER" layoutY="59.0" prefHeight="368.0" prefWidth="1236.0" style="-fx-background-color: #FFF;" vbarPolicy="NEVER" AnchorPane.bottomAnchor="1.0" AnchorPane.rightAnchor="64.0" AnchorPane.topAnchor="59.0">
+                     <content>
+                        <FlowPane fx:id="ProductsPane" hgap="50.0" minHeight="349.0" prefWidth="1217.0" style="-fx-background-color: #FFF;" vgap="50.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" top="10.0" />
+                           </padding>
+                        </FlowPane>
+                     </content>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </ScrollPane>
+                  <JFXButton fx:id="scrollup" contentDisplay="GRAPHIC_ONLY" layoutX="1253.0" layoutY="242.0" style="-fx-background-color: #2fc234;" AnchorPane.rightAnchor="12.0">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="CHEVRON_UP" size="20" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="scrolldown" contentDisplay="GRAPHIC_ONLY" layoutX="1253.0" layoutY="300.0" style="-fx-background-color: #2fc234;" AnchorPane.rightAnchor="12.0">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="CHEVRON_DOWN" size="20" />
+                     </graphic>
+                  </JFXButton>
+
+               </children>
+            </AnchorPane>
+         </center>
+         <JFXSnackbar fx:id="snackbar" prefWidth="300" />
+         <effect>
+            <InnerShadow />
+         </effect>
+         <bottom>
+            <AnchorPane prefWidth="1300.0" style="-fx-background-color: rgba(46, 45, 54, 1);" BorderPane.alignment="CENTER">
+               <children>
+                  <TextFlow fx:id="textflowpane" layoutX="141.0" layoutY="1.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="32.0" prefWidth="1157.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="141.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+                     <padding>
+                        <Insets top="2.0" />
+                     </padding>
+                  </TextFlow>
+                  <HBox fx:id="TimerPane" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="32.0" prefWidth="278.0" spacing="10.0" AnchorPane.rightAnchor="0.0" />
+                  <JFXButton fx:id="showNotifyPane" prefHeight="20.0" prefWidth="140.0" style="-fx-background-color: #249AF4;" text="Notification" textFill="#fffefe">
+                     <font>
+                        <Font name="FontAwesome Regular" size="13.0" />
+                     </font>
+                     <graphic>
+                        <HBox alignment="CENTER" spacing="20">
+                           <children>
+                              <JFXBadge fx:id="notifierBadge" layoutX="1045.0" layoutY="21.0" styleClass="icons-badge" text="0">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <control>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="BELL" layoutX="1057.0" layoutY="36.0" size="20" text="" wrappingWidth="33.0" />
+                                 </control>
+                              </JFXBadge>
+                           </children>
+                        </HBox>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </bottom>
+      </BorderPane>
+      <Pane fx:id="edit_infoPlan" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="289.0" prefWidth="492.0" style="-fx-background-color: WHITE;" visible="false" StackPane.alignment="TOP_CENTER">
+         <children>
+            <JFXTextField fx:id="Fname" layoutX="67.0" layoutY="67.0" text="Fname" />
+            <JFXTextField fx:id="Lname" layoutX="255.0" layoutY="67.0" text="Lname" />
+            <JFXTextField fx:id="email" alignment="CENTER" disable="true" editable="false" layoutX="67.0" layoutY="114.0" maxWidth="358.0" minWidth="358.0" prefHeight="31.0" prefWidth="358.0" text="Email" />
+            <Label layoutX="47.0" layoutY="14.0" text="Your Information">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <JFXPasswordField fx:id="pass" layoutX="66.0" layoutY="197.0" text="Password" />
+            <JFXPasswordField fx:id="reenterpass" layoutX="255.0" layoutY="197.0" text="Password" />
+            <JFXButton fx:id="updateinfo" layoutX="172.0" layoutY="244.0" prefHeight="30.0" prefWidth="125.0" style="-fx-background-color: #3099d7;" text="  Save" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#f8f8f8" glyphName="CLOUD" size="20" />
+               </graphic>
+            </JFXButton>
+            <FontAwesomeIconView fx:id="editpassicon" fill="#21c31f" glyphName="CHECK_CIRCLE" layoutX="425.0" layoutY="217.0" size="15" />
+            <FontAwesomeIconView fx:id="hideInfo" fill="#3981ab" glyphName="TIMES" layoutX="460.0" layoutY="29.0" size="20">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </FontAwesomeIconView>
+            <Label layoutX="174.0" layoutY="162.0" text="Your Password">
+               <font>
+                  <Font name="Franklin Gothic Medium Cond" size="20.0" />
+               </font>
+            </Label>
+            <FontAwesomeIconView fx:id="editname" fill="#21c31f" glyphName="CHECK_CIRCLE" layoutX="425.0" layoutY="87.0" size="15" />
+         </children>
+         <StackPane.margin>
+            <Insets right="220.0" top="60.0" />
+         </StackPane.margin>
+         <effect>
+            <InnerShadow color="#3099d7" height="169.26" radius="47.065" />
+         </effect>
+      </Pane>
+      <HBox fx:id="welcomepane" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: rgba(245, 249, 254, 1);">
+         <effect>
+            <InnerShadow />
+         </effect>
+         <children>
+            <HBox fx:id="welcmsg" alignment="CENTER" prefHeight="700.0" prefWidth="457.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <FontAwesomeIconView fill="#2a4365" glyphName="THUMBS_UP" size="35" />
+                  <Label text=" Welcome  " textFill="#2a4365">
+                     <font>
+                        <Font name="Eras Medium ITC" size="42.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="welcomeUserName" text="#USERNAME" textFill="#2a4365" underline="true">
+                     <font>
+                        <Font name="Eras Medium ITC" size="27.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <Pane fx:id="detail_pane" maxHeight="-Infinity" maxWidth="630.0" prefHeight="486.0" prefWidth="630.0" style="-fx-background-color: white; -fx-border-color: #249AF4;" visible="false" StackPane.alignment="CENTER">
+         <children>
+            <Label layoutX="340.0" layoutY="86.0" text="Product Name :">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="340.0" layoutY="135.0" text="Product Category :">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="336.0" layoutY="182.0" text=" Product Seller :">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="349.0" layoutY="322.0" text="Start Auction Session :">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="334.0" layoutY="226.0" text=" Minimum Price :">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="352.0" layoutY="356.0" text="End Auction Session :">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="232.0" layoutY="15.0" text="Product Details">
+               <font>
+                  <Font name="Arial" size="21.0" />
+               </font>
+               <effect>
+                  <Reflection topOpacity="0.08" />
+               </effect>
+            </Label>
+            <Label fx:id="s_name" alignment="CENTER" layoutX="460.0" layoutY="89.0" prefHeight="20.0" prefWidth="167.0" text="T - Shirt">
+               <font>
+                  <Font name="Franklin Gothic Demi" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="s_starttime" layoutX="535.0" layoutY="319.0" text="5 " textFill="#3856b9">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="s_endtime" layoutX="531.0" layoutY="357.0" text="7  " textFill="#3360d3">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="s_category" layoutX="507.0" layoutY="138.0" text="Fashion">
+               <font>
+                  <Font name="Franklin Gothic Demi" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="s_seller" layoutX="508.0" layoutY="185.0" text="Tawfek">
+               <font>
+                  <Font name="Franklin Gothic Demi" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="s_price" layoutX="509.0" layoutY="229.0" text="1,200" textFill="#ff2f2f">
+               <font>
+                  <Font name="Franklin Gothic Demi" size="17.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutY="73.0" prefHeight="368.0" prefWidth="306.0">
+               <children>
+                  <ImageView fx:id="s_img" fitHeight="323.0" fitWidth="300.0" layoutX="3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="104.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="0.0">
+                     <image>
+                        <Image url="@../Resources/Images/defaultFace.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Separator layoutX="340.0" layoutY="124.0" prefHeight="3.0" prefWidth="217.0" />
+            <Separator layoutX="340.0" layoutY="170.0" prefHeight="3.0" prefWidth="217.0" />
+            <Separator layoutX="339.0" layoutY="213.0" prefHeight="3.0" prefWidth="225.0" />
+            <Separator layoutX="339.0" layoutY="263.0" prefHeight="3.0" prefWidth="225.0" />
+            <FontAwesomeIconView fx:id="closeDetail" fill="#249af4" glyphName="TIMES" layoutX="600.0" layoutY="23.0" size="20" text="">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </FontAwesomeIconView>
+            <Label layoutX="396.0" layoutY="287.0" text="Auction Session Info" textFill="#249af4">
+               <graphic>
+                  <MaterialDesignIconView fill="#249af4" glyphName="ALARM" size="18" />
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="s_participate" buttonType="RAISED" layoutX="399.0" layoutY="436.0" onAction="#participate" prefHeight="36.0" prefWidth="142.0" style="-fx-background-color: #249AF4;" text="  Participate" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#ebebeb" glyphName="CHECK" size="15" wrappingWidth="12.857142090797424" />
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <effect>
+                  <Reflection fraction="0.41" topOpacity="0.34" />
+               </effect>
+            </JFXButton>
+            <Label layoutX="548.0" layoutY="319.0" text="  : 00 " textFill="#2e40c6">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="546.0" layoutY="357.0" text="  : 00 " textFill="#2451bc">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="352.0" layoutY="391.0" text="Session Date :">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="s_date" layoutX="480.0" layoutY="392.0" prefHeight="25.0" prefWidth="106.0" text="10 \ 5 \ 2017" textFill="#3360d3">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" radius="9.2575" width="18.03" />
+         </effect>
+      </Pane>
+      <StackPane fx:id="Currentbid_Pane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="233.0" prefWidth="600.0" style="-fx-background-color: #4fc3f7;" visible="false" StackPane.alignment="TOP_CENTER">
+         <VBox fx:id="nobidpane" alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+            <children>
+               <Label text="There's No Bid Started Yet !" textFill="WHITE" VBox.vgrow="NEVER">
+                  <font>
+                     <Font name="System Bold" size="29.0" />
+                  </font>
+                  <graphic>
+                     <MaterialDesignIconView fill="WHITE" glyphName="ALARM" size="30" />
+                  </graphic>
+               </Label>
+               <JFXButton fx:id="close_bid" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" prefHeight="28.0" prefWidth="597.0" style="-fx-background-color: white;" translateY="80.0" VBox.vgrow="NEVER">
+                  <VBox.margin>
+                     <Insets />
+                  </VBox.margin>
+                  <graphic>
+                     <FontAwesomeIconView glyphName="ARROW_UP" />
+                  </graphic>
+               </JFXButton>
+            </children>
+         </VBox>
+            <AnchorPane fx:id="bidpane" minHeight="0.0" minWidth="0.0" prefHeight="231.0" prefWidth="599.0" style="-fx-background-color: #FFF;">
+               <children>
+                  <FontAwesomeIconView fx:id="hide_currentbidpane" glyphName="TIMES" layoutX="573.0" layoutY="20.0" size="18">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></FontAwesomeIconView>
+               <ImageView fx:id="b_img" fitHeight="222.0" fitWidth="217.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true">
+                  <image>
+                     <Image url="@../Resources/Images/defaultFace.png" />
+                  </image>
+                  <effect>
+                     <Lighting diffuseConstant="2.0">
+                        <bumpInput>
+                           <Shadow />
+                        </bumpInput>
+                     </Lighting>
+                  </effect>
+               </ImageView>
+               <Label layoutX="340.0" layoutY="14.0" text="Currently in Bids" textFill="#1560c9">
+                  <font>
+                     <Font size="19.0" />
+                  </font>
+               </Label>
+               <Separator layoutX="289.0" layoutY="52.0" prefHeight="3.0" prefWidth="238.0" />
+               <FontAwesomeIconView fill="#2081ff" glyphName="REFRESH" layoutX="309.0" layoutY="34.0" size="22" />
+               <Label layoutX="261.0" layoutY="76.0" text="Product Name :">
+                  <font>
+                     <Font size="16.0" />
+                  </font>
+               </Label>
+               <Label layoutX="261.0" layoutY="116.0" text="Product Seller :">
+                  <font>
+                     <Font size="16.0" />
+                  </font>
+               </Label>
+               <Label layoutX="261.0" layoutY="153.0" text="Session End Time :">
+                  <font>
+                     <Font size="16.0" />
+                  </font>
+               </Label>
+               <JFXButton fx:id="b_join" layoutX="351.0" layoutY="187.0" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: #2081ff;" text="Join Bid " textFill="WHITE">
+                  <font>
+                     <Font size="13.0" />
+                  </font>
+               </JFXButton>
+               <Label fx:id="b_name" layoutX="408.0" layoutY="76.0" text="Smart Room">
+                  <font>
+                     <Font name="Comic Sans MS" size="16.0" />
+                  </font>
+               </Label>
+               <Label fx:id="b_seller" layoutX="408.0" layoutY="116.0" text="Mohamed Elhosany">
+                  <font>
+                     <Font name="Comic Sans MS" size="16.0" />
+                  </font>
+               </Label>
+               <Label fx:id="b_end" layoutX="408.0" layoutY="153.0" text="12">
+                  <font>
+                     <Font name="Comic Sans MS" size="16.0" />
+                  </font>
+               </Label>
+               <Label layoutX="428.0" layoutY="153.0" text=": 00">
+                  <font>
+                     <Font name="Comic Sans MS" size="16.0" />
+                  </font>
+               </Label>
+               </children>
+            </AnchorPane>
+         <StackPane.margin>
+            <Insets top="60.0" />
+         </StackPane.margin>
+         <effect>
+            <DropShadow height="0.0" radius="4.0075" width="18.03" />
+         </effect>
+      </StackPane>
+      <BorderPane fx:id="notify_pane" maxHeight="368.0" maxWidth="286.0" prefHeight="368.0" prefWidth="309.0" translateY="2.0" visible="false" StackPane.alignment="BOTTOM_LEFT">
+         <effect>
+            <DropShadow height="0.0" radius="4.75" />
+         </effect>
+         <StackPane.margin>
+            <Insets bottom="35.0" />
+         </StackPane.margin>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(46, 45, 54, 1);" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="71.0" layoutY="9.0" text="  Notifications" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="ENVELOPE" size="18" />
+                     </graphic>
+                  </Label>
+                  <JFXButton fx:id="closeNotify" contentDisplay="GRAPHIC_ONLY" layoutX="251.0" layoutY="7.0" prefHeight="37.0" prefWidth="35.0" ripplerFill="BLACK" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="ANGLE_LEFT" size="20" translateX="1.0" translateY="-2.0" wrappingWidth="18.499990969896317" />
+                     </graphic>
+                  </JFXButton>
+                  <ScrollPane hbarPolicy="NEVER" layoutY="42.0" prefHeight="325.0" prefWidth="286.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="285.0">
+                           <children>
+                              <FlowPane fx:id="notificationContainer" alignment="TOP_CENTER" pickOnBounds="false" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+      <AnchorPane fx:id="sessionRoom" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFF;" visible="false">
+         <children>
+            <HBox layoutX="431.0" layoutY="94.0" prefHeight="56.0" prefWidth="225.0" spacing="20.0" AnchorPane.leftAnchor="431.0" AnchorPane.rightAnchor="644.0" AnchorPane.topAnchor="94.0">
+               <children>
+                  <Label prefHeight="50.0" prefWidth="43.0" text="00">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="90.0" layoutY="10.0" text=":">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="s_min" text="00">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+                  <Label text=":">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="s_sec" prefHeight="50.0" prefWidth="39.0" text="00">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Label layoutX="444.0" layoutY="47.0" text="Session Time Left" textFill="#2178bf" AnchorPane.leftAnchor="444.0" AnchorPane.rightAnchor="687.0" AnchorPane.topAnchor="47.0">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="970.0" layoutY="24.0" onMouseClicked="#setFullscreen" text="Enter Full Screen" AnchorPane.rightAnchor="213.0" AnchorPane.topAnchor="24.0">
+               <graphic>
+                  <FontAwesomeIconView fill="#6aa5e2" glyphName="TV" size="22" text="">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </FontAwesomeIconView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <JFXButton fx:id="leavebtn" layoutX="1142.0" layoutY="23.0" style="-fx-background-color: #6aa5e2;" text="Leave bid " textFill="WHITE" AnchorPane.rightAnchor="86.0" AnchorPane.topAnchor="23.0">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </JFXButton>
+            <AnchorPane fx:id="inbid" layoutX="77.0" layoutY="182.0" prefHeight="537.0" prefWidth="1300.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="182.0">
+               <children>
+                  <ImageView fitHeight="177.0" fitWidth="459.0" layoutX="350.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="201.0">
+                     <image>
+                        <Image url="@../Resources/Images/table.jpg" />
+                     </image>
+                  </ImageView>
+                  <Separator layoutX="655.0" layoutY="188.0" prefHeight="3.0" prefWidth="73.0" rotate="-26.0" style="-fx-background-color: black;" />
+                  <Separator layoutX="494.0" layoutY="158.0" prefHeight="3.0" prefWidth="66.0" rotate="90.0" style="-fx-background-color: black;" />
+                  <Separator layoutX="329.0" layoutY="188.0" prefHeight="3.0" prefWidth="72.0" rotate="24.4" style="-fx-background-color: black;" />
+                  <AnchorPane layoutX="442.0" layoutY="212.0" minHeight="43.0" prefHeight="43.0" prefWidth="188.0" AnchorPane.bottomAnchor="282.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="56.0" prefHeight="43.0" prefWidth="131.0" text="Waiting For Winner" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font name="Gill Sans MT Ext Condensed Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="22.0" fitWidth="20.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/Images/coins.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="22.0" fitWidth="20.0" layoutX="20.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/Images/coins.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="22.0" fitWidth="20.0" layoutX="20.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/Images/coins.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="22.0" fitWidth="20.0" layoutX="40.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/Images/coins.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="22.0" fitWidth="20.0" layoutX="40.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/Images/coins.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="22.0" fitWidth="20.0" layoutX="30.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/Images/coins.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <HBox fx:id="RANK2" layoutX="377.0" layoutY="14.0" prefHeight="114.0" prefWidth="298.0" style="-fx-border-color: black;">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="114.0" prefWidth="28.0" style="-fx-background-color: #2178bf;" text="2" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <VBox layoutX="412.0" layoutY="229.0" prefHeight="114.0" prefWidth="263.0" style="-fx-border-width: 3;">
+                           <children>
+                              <HBox prefHeight="82.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fitHeight="81.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Resources/Images/defaultFace.png" />
+                                       </image>
+                                    </ImageView>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="6.0" text="Name :" />
+                                          <Label layoutX="14.0" layoutY="33.0" text="Phone :" />
+                                          <Label layoutX="14.0" layoutY="60.0" text="State :" />
+                                          <Label layoutX="61.0" layoutY="6.0" text="..">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="61.0" layoutY="33.0" text="..">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="61.0" layoutY="59.0" text=".." textFill="#4acd39">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label prefHeight="27.0" prefWidth="118.0" text=" Currently Submit   :">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="0" textFill="#4f8d19">
+                                       <graphic>
+                                          <ImageView fitHeight="22.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Images/coins.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label prefHeight="28.0" prefWidth="28.0" text=" $" textFill="#28943c">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets left="1.0" right="5.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="RANK3" layoutX="725.0" layoutY="58.0" prefHeight="114.0" prefWidth="292.0" style="-fx-border-color: black;">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="114.0" prefWidth="28.0" style="-fx-background-color: #2178bf;" text="3" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <VBox layoutX="732.0" layoutY="271.0" prefHeight="114.0" prefWidth="262.0">
+                           <children>
+                              <HBox prefHeight="82.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fitHeight="81.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Resources/Images/defaultFace.png" />
+                                       </image>
+                                    </ImageView>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="6.0" text="Name :" />
+                                          <Label layoutX="14.0" layoutY="33.0" text="Phone :" />
+                                          <Label layoutX="14.0" layoutY="60.0" text="State :" />
+                                          <Label layoutX="61.0" layoutY="6.0" text="..">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="61.0" layoutY="33.0" text="..">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="61.0" layoutY="59.0" text=".." textFill="#4acd39">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label prefHeight="27.0" prefWidth="111.0" text=" Currently Submit   :">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="0" textFill="#4f8d19">
+                                       <graphic>
+                                          <ImageView fitHeight="22.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Images/coins.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label prefHeight="28.0" prefWidth="28.0" text=" $" textFill="#28943c">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets left="1.0" right="5.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Label layoutX="1029.0" layoutY="212.0" text="Other Participated Bidders" AnchorPane.bottomAnchor="298.0" AnchorPane.rightAnchor="61.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <VBox fx:id="under3" layoutX="991.0" layoutY="257.0" prefHeight="266.0" prefWidth="286.0" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="23.0" />
+                  <AnchorPane layoutX="199.0" layoutY="352.0" prefHeight="171.0" prefWidth="630.0" style="-fx-border-color: silver;" AnchorPane.bottomAnchor="14.0">
+                     <children>
+                        <ImageView fx:id="s_itemimg" fitHeight="150.0" fitWidth="200.0" layoutX="32.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/Images/defaultFace.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="272.0" layoutY="20.0" text="Product Name :">
+                           <font>
+                              <Font name="Eras Medium ITC" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="273.0" layoutY="53.0" text="Product Seller  :">
+                           <font>
+                              <Font name="Eras Medium ITC" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="270.0" layoutY="86.0" text="Minimum Price :">
+                           <font>
+                              <Font name="Eras Medium ITC" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="s_itemname" layoutX="409.0" layoutY="21.0" text="..">
+                           <font>
+                              <Font name="Arial Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="s_itemseller" layoutX="409.0" layoutY="54.0" text="..">
+                           <font>
+                              <Font name="Arial Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="s_itemprice" layoutX="409.0" layoutY="87.0" text="0">
+                           <font>
+                              <Font name="Arial Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="479.0" layoutY="87.0" text="\$">
+                           <font>
+                              <Font name="Arial Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="submitinput" layoutX="260.0" layoutY="115.0" maxWidth="188.0" minWidth="188.0" prefHeight="31.0" prefWidth="188.0" promptText="Enter New Price" />
+                        <JFXButton fx:id="submitbtn" layoutX="463.0" layoutY="118.0" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #2178bf;" text="Submit" textFill="WHITE" />
+                        <Label fx:id="handleinput" layoutX="270.0" layoutY="149.0" text="* illegal or insufficient price" textFill="#e80000" visible="false" />
+                     </children>
+                  </AnchorPane>
+                  <Label alignment="CENTER" layoutX="199.0" layoutY="328.0" prefHeight="24.0" prefWidth="117.0" style="-fx-background-color: #2178bf;" text="New Submittion" textFill="WHITE" AnchorPane.bottomAnchor="185.0">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="BRIEFCASE" size="15" />
+                     </graphic>
+                  </Label>
+                  <HBox fx:id="RANK1" layoutX="32.0" layoutY="57.0" style="-fx-border-color: black;">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="114.0" prefWidth="28.0" style="-fx-background-color: #2178bf;" text="1" textFill="WHITE">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <VBox layoutX="75.0" layoutY="272.0" prefHeight="110.0" prefWidth="270.0">
+                           <children>
+                              <HBox prefHeight="82.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fitHeight="81.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Resources/Images/defaultFace.png" />
+                                       </image>
+                                    </ImageView>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="6.0" text="Name :" />
+                                          <Label layoutX="14.0" layoutY="33.0" text="Phone :" />
+                                          <Label layoutX="14.0" layoutY="60.0" text="State :" />
+                                          <Label layoutX="61.0" layoutY="6.0" text="..">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="61.0" layoutY="33.0" text="..">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="61.0" layoutY="59.0" text=".." textFill="#f21111">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="31.0" prefWidth="268.0">
+                                 <children>
+                                    <Label prefHeight="27.0" prefWidth="119.0" text=" Currently Submit   :">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="0" textFill="#4f8d19">
+                                       <graphic>
+                                          <ImageView fitHeight="22.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Images/coins.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label prefHeight="28.0" prefWidth="28.0" text=" $" textFill="#28943c">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets left="1.0" right="5.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Label fx:id="chat1" layoutX="63.0" layoutY="179.0" onMouseClicked="#startChatting" text="Click To Chat" underline="true">
+                     <graphic>
+                        <FontAwesomeIconView fx:id="chatstate1" fill="#ff2e1f" glyphName="COMMENTING" size="20" />
+                     </graphic>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="chat2" layoutX="401.0" layoutY="128.0" onMouseClicked="#startChatting" text="Click To Chat" translateY="4.0" underline="true">
+                     <graphic>
+                        <FontAwesomeIconView fx:id="chatstate2" fill="#ff2e1f" glyphName="COMMENTING" size="20" />
+                     </graphic>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="chat3" layoutX="754.0" layoutY="179.0" onMouseClicked="#startChatting" text="Click To Chat" underline="true">
+                     <graphic>
+                        <FontAwesomeIconView fx:id="chatstate3" fill="#fc3025" glyphName="COMMENTING" size="20" />
+                     </graphic>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <StackPane layoutX="1029.0" layoutY="-32.0" prefHeight="150.0" prefWidth="200.0" translateY="-65.0" AnchorPane.rightAnchor="15.0">
+                     <children>
+                        <AnchorPane fx:id="chatadvertise" prefHeight="258.0" prefWidth="205.0">
+                           <children>
+                              <FontAwesomeIconView fill="#3ccc55" glyphName="CARET_RIGHT" layoutX="156.0" layoutY="39.0" size="20" />
+                              <Label alignment="TOP_LEFT" contentDisplay="TEXT_ONLY" ellipsisString="" graphicTextGap="5.0" layoutX="15.0" layoutY="14.0" lineSpacing="2.0" prefHeight="38.0" prefWidth="141.0" style="-fx-background-color: #3CCC55;" text="Chatting  Service  available Only For Online Bidders" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                 <padding>
+                                    <Insets bottom="2.0" left="4.0" right="2.0" top="2.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="9.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="177.0" fitWidth="90.0" layoutX="155.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/Images/msg.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="116.0" fitWidth="238.0" layoutX="14.0" layoutY="163.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../Resources/Images/chatgif.gif" />
+                                 </image></ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="ChatPane" maxWidth="320.0" minHeight="258.0" minWidth="256.0" prefHeight="289.0" prefWidth="256.0" style="-fx-border-color: silver;" visible="false">
+                           <children>
+                              <HBox prefHeight="35.0" prefWidth="257.0" style="-fx-background-color: #6aa5e2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label fx:id="biddername" text="Mohamed Elhosany" textFill="WHITE" translateX="10.0" translateY="5.0">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="USERS" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="Comic Sans MS" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXButton fx:id="closechat" alignment="TOP_RIGHT" contentDisplay="GRAPHIC_ONLY" translateX="75.0" translateY="5.0" HBox.hgrow="ALWAYS">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="TIMES" size="15" />
+                                       </graphic>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                              <ScrollPane hbarPolicy="NEVER" layoutX="7.0" prefHeight="200.0" prefWidth="248.0" vbarPolicy="NEVER" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0">
+                                 <content>
+                                    <AnchorPane prefWidth="253.0" style="-fx-background-color: white;">
+                                       <children>
+                                          <VBox fx:id="chatroom" layoutX="14.0" layoutY="-17.0" prefWidth="100.0" spacing="3.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <HBox fx:id="sendmsg" layoutX="10.0" layoutY="12.0" prefHeight="60.0" prefWidth="253.0" spacing="8.0">
+                                                   <children>
+                                                      <Label fx:id="msg" alignment="TOP_LEFT" contentDisplay="TEXT_ONLY" ellipsisString="" graphicTextGap="5.0" lineSpacing="2.0" prefHeight="50.0" prefWidth="193.0" style="-fx-background-color: #6aa5e2;" text="Hello , How Are You My Friend ! Have a  nice time with new Chat in our System ya man " textAlignment="JUSTIFY" textFill="WHITE" translateX="-4.0" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" right="2.0" top="10.0" />
+                                                         </HBox.margin>
+                                                         <padding>
+                                                            <Insets bottom="2.0" left="4.0" right="2.0" top="2.0" />
+                                                         </padding>
+                                                         <font>
+                                                            <Font name="Arial" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox fx:id="recievedmsg1" layoutX="10.0" layoutY="12.0" prefHeight="60.0" prefWidth="253.0" spacing="8.0">
+                                                   <children>
+                                                      <ImageView fitHeight="59.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../Resources/Images/ProfilePics/s1.jpg" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <FontAwesomeIconView fill="#b5e7c0" glyphName="CARET_LEFT" size="20" translateX="5.0" translateY="12.0" />
+                                                      <Label alignment="TOP_LEFT" contentDisplay="TEXT_ONLY" ellipsisString="" graphicTextGap="5.0" lineSpacing="2.0" prefHeight="50.0" prefWidth="193.0" style="-fx-background-color: #b5e7c0;" text="Hello , How Are You My Friend ! Have a  nice time with new Chat in our System ya man " textAlignment="JUSTIFY" textFill="#121713" translateX="-4.0" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets right="2.0" top="10.0" />
+                                                         </HBox.margin>
+                                                         <padding>
+                                                            <Insets bottom="2.0" left="4.0" right="2.0" top="2.0" />
+                                                         </padding>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox fx:id="recievedmsg11" layoutX="10.0" layoutY="138.0" prefHeight="60.0" prefWidth="253.0" spacing="8.0">
+                                                   <children>
+                                                      <ImageView fitHeight="59.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../Resources/Images/ProfilePics/s1.jpg" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <FontAwesomeIconView fill="#b5e7c0" glyphName="CARET_LEFT" size="20" translateX="5.0" translateY="12.0" />
+                                                      <Label alignment="TOP_LEFT" contentDisplay="TEXT_ONLY" ellipsisString="" graphicTextGap="5.0" lineSpacing="2.0" prefHeight="50.0" prefWidth="193.0" style="-fx-background-color: #b5e7c0;" text="Hello , How Are You My Friend ! Have a  nice time with new Chat in our System ya man " textAlignment="JUSTIFY" textFill="#121713" translateX="-4.0" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets right="2.0" top="10.0" />
+                                                         </HBox.margin>
+                                                         <padding>
+                                                            <Insets bottom="2.0" left="4.0" right="2.0" top="2.0" />
+                                                         </padding>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox fx:id="sendmsg1" layoutX="10.0" layoutY="75.0" prefHeight="60.0" prefWidth="253.0" spacing="8.0">
+                                                   <children>
+                                                      <Label alignment="TOP_LEFT" contentDisplay="TEXT_ONLY" ellipsisString="" graphicTextGap="5.0" lineSpacing="2.0" prefHeight="50.0" prefWidth="193.0" style="-fx-background-color: #6aa5e2;" text="Hello , How Are You My Friend ! Have a  nice time with new Chat in our System ya man " textAlignment="JUSTIFY" textFill="WHITE" translateX="-4.0" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" right="2.0" top="10.0" />
+                                                         </HBox.margin>
+                                                         <padding>
+                                                            <Insets bottom="2.0" left="4.0" right="2.0" top="2.0" />
+                                                         </padding>
+                                                         <font>
+                                                            <Font name="Arial" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets top="2.0" />
+                                             </padding>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </ScrollPane>
+                              <HBox alignment="CENTER_LEFT" layoutX="2.0" layoutY="11.0" prefHeight="56.0" prefWidth="254.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <children>
+                                    <JFXTextArea fx:id="messageArea" focusColor="WHITE" prefHeight="56.0" prefWidth="200.0" promptText="Type a Message .." unFocusColor="WHITE" wrapText="true" HBox.hgrow="ALWAYS" />
+                                    <JFXButton fx:id="sendbtn" onAction="#sendChatMsg" prefHeight="58.0" prefWidth="52.0" style="-fx-background-color: #6aa5e2;" text="Send" textFill="WHITE" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </StackPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="bidresult" layoutX="341.0" layoutY="182.0" prefHeight="383.0" prefWidth="492.0" visible="false">
+               <children>
+                  <AnchorPane layoutX="35.0" layoutY="84.0" prefHeight="276.0" prefWidth="389.0" style="-fx-background-color: rgba(246, 189, 64, 1); -fx-background-radius: 50;">
+                     <children>
+                        <Label fx:id="resultmsg" layoutX="40.0" layoutY="157.0" prefHeight="81.0" prefWidth="298.0" text="Bad News !  You  Lose Your Bid Session , We Hope best for You in Next Time " textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="rdetbtn" layoutX="247.0" layoutY="91.0" prefHeight="29.0" prefWidth="92.0" style="-fx-background-color: gold; -fx-border-radius: 50;" text="Result Details" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fitHeight="112.0" fitWidth="92.0" layoutX="143.0" layoutY="37.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../Resources/Images/cup.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="rankresult" layoutX="96.0" layoutY="77.0" text="1" textFill="#bf8b1b">
+                           <font>
+                              <Font size="37.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <ImageView fitHeight="171.0" fitWidth="640.0" layoutX="-89.0" layoutY="-1.0" pickOnBounds="true" AnchorPane.leftAnchor="-89.0" AnchorPane.rightAnchor="-59.0" AnchorPane.topAnchor="-1.0">
+                     <image>
+                        <Image url="@../Resources/Images/2.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="164.0" layoutY="35.0" text="Bid Result" textFill="WHITE">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="27.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="120.0" layoutY="153.0" text="RANK" textFill="#c3860c">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="resultdetail" layoutX="645.0" layoutY="170.0" prefHeight="518.0" prefWidth="640.0" style="-fx-border-color: #6aa5e2; -fx-background-color: #6aa5e2;" visible="false" AnchorPane.bottomAnchor="33.0">
+               <children>
+                  <AnchorPane layoutX="8.0" layoutY="7.0" prefHeight="476.0" prefWidth="354.0" style="-fx-border-color: #6aa5e2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="94.0" layoutY="11.0" prefHeight="50.0" prefWidth="199.0" text="Winner Info" textFill="#fff7f7">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <AnchorPane layoutX="6.0" layoutY="70.0" prefHeight="444.0" prefWidth="358.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="69.0">
+                           <children>
+                              <AnchorPane layoutX="8.0" layoutY="83.0" prefHeight="138.0" prefWidth="348.0" AnchorPane.rightAnchor="2.0">
+                                 <children>
+                                    <ImageView fx:id="pimg" fitHeight="127.0" fitWidth="156.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Resources/Images/defaultFace.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="169.0" layoutY="14.0" text="Name :" />
+                                    <Label layoutX="169.0" layoutY="47.0" text="Category :" />
+                                    <Label layoutX="169.0" layoutY="79.0" text="Seller :" />
+                                    <Label layoutX="169.0" layoutY="110.0" text="Price :" />
+                                    <Label fx:id="pname" alignment="CENTER" layoutX="209.0" layoutY="14.0" prefHeight="17.0" prefWidth="138.0" text="Smart TV 55-inch LED" textFill="#ff1919" wrapText="true" />
+                                    <Label fx:id="pcat" alignment="CENTER" layoutX="220.0" layoutY="47.0" prefHeight="17.0" prefWidth="127.0" text="Laptops" textFill="#ff0909" wrapText="true" />
+                                    <Label fx:id="pseller" alignment="CENTER" layoutX="222.0" layoutY="79.0" prefHeight="17.0" prefWidth="125.0" text="Mohamed Elseller" textFill="#ff0707" wrapText="true" />
+                                    <Label fx:id="pprice" alignment="CENTER" layoutX="204.0" layoutY="110.0" prefHeight="17.0" prefWidth="144.0" text="12,500" textFill="#f51212" wrapText="true" />
+                                 </children>
+                              </AnchorPane>
+                              <Label alignment="CENTER" layoutY="33.0" prefHeight="26.0" prefWidth="92.0" style="-fx-background-color: #6aa5e2;" text="Product" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutY="245.0" prefHeight="26.0" prefWidth="92.0" style="-fx-background-color: #6aa5e2;" text="Winner" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane layoutX="14.0" layoutY="285.0" prefHeight="157.0" prefWidth="340.0">
+                                 <children>
+                                    <ImageView fx:id="wimg" fitHeight="127.0" fitWidth="156.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Resources/Images/defaultFace.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label alignment="CENTER" layoutX="150.0" layoutY="6.0" text="Name :" />
+                                    <Label layoutX="150.0" layoutY="39.0" text="Phone :" />
+                                    <Label layoutX="150.0" layoutY="70.0" text="Submitted Price :" />
+                                    <Label fx:id="wname" alignment="CENTER" layoutX="189.0" layoutY="6.0" prefHeight="17.0" prefWidth="148.0" text="Mohamed Elhosany" textFill="#ff1919" wrapText="true" />
+                                    <Label fx:id="wphone" alignment="CENTER" layoutX="210.0" layoutY="39.0" prefHeight="17.0" prefWidth="104.0" text="01097706982" textFill="#ff0909" wrapText="true" />
+                                    <Label fx:id="wsubmitprice" layoutX="185.0" layoutY="93.0" text="2,50000000" textFill="#73b565">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="24.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Images/coins.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <ImageView fitHeight="43.0" fitWidth="43.0" layoutX="65.0" layoutY="15.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../Resources/Images/cup.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <Label alignment="CENTER" layoutX="409.0" layoutY="14.0" prefHeight="50.0" prefWidth="199.0" text="Bid Ranking" textFill="#fff7f7" AnchorPane.topAnchor="14.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <FlowPane fx:id="under1" alignment="TOP_CENTER" layoutX="361.0" layoutY="69.0" prefHeight="445.0" prefWidth="270.0" style="-fx-border-color: #6aa5e2; -fx-background-color: white;" vgap="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="68.0" />
+                  <MaterialDesignIconView fill="#ffe72b" glyphName="RUN" layoutX="401.0" layoutY="55.0" size="40" stroke="#ffcb2b" text="" />
+               </children>
+            </AnchorPane>
+
+                                                         </children>
+         <effect>
+            <InnerShadow choke="0.12" color="#3960ff" />
+         </effect>
+      </AnchorPane>
+   </children>
+</StackPane>

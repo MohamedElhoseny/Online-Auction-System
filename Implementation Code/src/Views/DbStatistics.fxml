@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="45.0" layoutY="22.0" prefHeight="27.0" prefWidth="300.0" text="  Database Statistics" textFill="#141313">
+         <font>
+            <Font name="Eras Medium ITC" size="22.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="BAR_CHART" size="25" wrappingWidth="27.14285659790039" />
+         </graphic>
+      </Label>
+      <ScrollPane hbarPolicy="NEVER" layoutY="79.0" prefHeight="442.0" prefWidth="668.0">
+        <content>
+          <AnchorPane fx:id="statspane" minHeight="0.0" minWidth="0.0" prefHeight="440.0" prefWidth="665.0">
+               <children>
+                  <LineChart fx:id="sysuser" layoutX="31.0" layoutY="32.0" prefHeight="400.0" prefWidth="542.0" title="System User Statistics">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+               </children></AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

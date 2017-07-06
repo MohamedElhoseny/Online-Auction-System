@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="_viewpane" prefHeight="439.0" prefWidth="689.0" style="-fx-background-color: rgba(245, 249, 254, 1);" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="49.0" layoutY="20.0" text="Auction Sessions" textFill="#141313">
+         <font>
+            <Font name="Eras Medium ITC" size="22.0" />
+         </font>
+         <graphic>
+            <MaterialDesignIconView glyphName="ALARM" size="25" />
+         </graphic>
+      </Label>
+      <AnchorPane layoutX="12.0" layoutY="329.0" prefHeight="96.0" prefWidth="661.0" style="-fx-border-color: silver;">
+         <children>
+            <JFXDatePicker fx:id="datepicker" editable="false" layoutX="46.0" layoutY="33.0" promptText="Choose Session Date" />
+            <JFXDatePicker fx:id="timepicker" editable="false" layoutX="253.0" layoutY="33.0" nodeOrientation="LEFT_TO_RIGHT" promptText="    Choose Session Time" showTime="true" style="-fx-background-color: transparent;" />
+            <JFXButton fx:id="addsession" layoutX="504.0" layoutY="29.0" prefHeight="38.0" prefWidth="126.0" style="-fx-background-color: #1b7836;" text="  Add Session" textFill="WHITE">
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="PLUS" size="20" />
+               </graphic>
+               <font>
+                  <Font name="Eras Medium ITC" size="13.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" layoutX="12.0" layoutY="304.0" style="-fx-background-color: #1b7836;" text="  Add new Session" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <padding>
+            <Insets right="5.0" />
+         </padding>
+      </Label>
+      <AnchorPane layoutX="74.0" layoutY="67.0" prefHeight="225.0" prefWidth="537.0">
+         <children>
+            <TableView fx:id="sessiontable" layoutX="7.0" layoutY="4.0" prefHeight="208.0" prefWidth="536.0" styleClass="tree-table-view" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columns>
+                <TableColumn fx:id="Session_Date" prefWidth="153.0" styleClass="rowLabel" text="Session_Date" />
+                  <TableColumn fx:id="Start_Time" prefWidth="107.0" styleClass="rowLabel" text="Start Time" />
+                  <TableColumn fx:id="End_Time" prefWidth="115.0" styleClass="rowLabel" text="End Time" />
+                  <TableColumn fx:id="reserved" prefWidth="116.0" styleClass="rowLabel" text="Reserved" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <Label fx:id="_error" layoutX="232.0" layoutY="306.0" text="* illegal input please see instructions of our System" textFill="RED" visible="false" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="539.0" prefWidth="682.0" style="-fx-background-color: rgba(245, 249, 254, 1);" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="50.0" layoutY="28.0" text="Online Order List">
+         <font>
+            <Font name="Bodoni MT" size="22.0" />
+         </font>
+      </Label>
+      <VBox layoutX="25.0" layoutY="70.0" prefHeight="358.0" prefWidth="639.0">
+         <children>
+            <TableView fx:id="item_table"  prefHeight="358.0" prefWidth="738.0" styleClass="tree-table-view" VBox.vgrow="ALWAYS">
+              <columns>
+                  <TableColumn styleClass="rowLabel"  fx:id="c_id" prefWidth="99.0" text="ID" />
+                  <TableColumn styleClass="rowLabel" fx:id="c_Name" prefWidth="108.0" text="UserName" />
+                  <TableColumn styleClass="rowLabel" fx:id="c_itemname" prefWidth="105.0" text="Product Name" />
+                  <TableColumn styleClass="rowLabel" fx:id="c_category" prefWidth="102.0" text="Category" />
+                  <TableColumn styleClass="rowLabel" fx:id="c_price" prefWidth="99.0" text="Minimum Prize" />
+                  <TableColumn styleClass="rowLabel" fx:id="c_starttime" prefWidth="125.0" text="Session_Start_Time" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <TextField fx:id="entered_id" alignment="CENTER" layoutX="50.0" layoutY="456.0" prefHeight="41.0" prefWidth="149.0" promptText="Enter ID" visible="false">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </TextField>
+      <JFXButton fx:id="savebtn" layoutX="512.0" layoutY="456.0" prefHeight="41.0" prefWidth="111.0" style="-fx-background-color: red;" text="  Save" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="approve" layoutX="225.0" layoutY="482.0" style="-fx-background-color: #41d64b;" text="Approved" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="CHECK_CIRCLE" size="18" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="reject" layoutX="102.0" layoutY="482.0" style="-fx-background-color: Orange;" text="Rejected" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="TIMES_CIRCLE" size="18" />
+         </graphic>
+      </JFXButton>
+      <FontAwesomeIconView fill="WHITE" glyphName="CLOUD" layoutX="526.0" layoutY="484.0" size="18" />
+   </children>
+</AnchorPane>
